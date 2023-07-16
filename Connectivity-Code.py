@@ -24,42 +24,42 @@ print("=========================================================
 =")
 #to delete records
 def delete():
-print("Do you want to- 1.Delete by Name or 2.Delete by Reg.No?")
-c=int(input("Enter your choice '1' for Name and '2' for Reg.No:"))
-if c==1:
-import mysql.connector as con
-obj=con.connect(host="localhost",user="root",password="tiger",database="SMPp
-roject")
-cur=obj.cursor()
-name=input("Enter name of student:")
-qry="DELETE FROM REGISTRATION_DETAILS WHERE
-NAME='{}'".format(name)
-cur.execute(qry)
-print()
-print("Record deleted successfully!!!")
-print("=========================================================
-============================================================")
-obj.commit()
-cur.close()
-obj.close()
-elif c==2:
-import mysql.connector as con
-obj=con.connect(host="localhost",user="root",password="tiger",database="SMPp
-roject")
-cur=obj.cursor()
-r=int(input("Enter Reg.No.:"))
-qry="DELETE FROM REGISTRATION_DETAILS WHERE
-REGNO='{}'".format(r)
-cur.execute(qry)
-print()
-print("Record deleted successfully!!!")
-print("=========================================================
-============================================================")
-obj.commit()
-cur.close()
-obj.close()
-else:
-print("Option invalid!!!")
+  print("Do you want to- 1.Delete by Name or 2.Delete by Reg.No?")
+  c=int(input("Enter your choice '1' for Name and '2' for Reg.No:"))
+  if c==1:
+    import mysql.connector as con
+    obj=con.connect(host="localhost",user="root",password="tiger",database="SMPp
+    roject")
+    cur=obj.cursor()
+    name=input("Enter name of student:")
+    qry="DELETE FROM REGISTRATION_DETAILS WHERE
+    NAME='{}'".format(name)
+    cur.execute(qry)
+    print()
+    print("Record deleted successfully!!!")
+    print("=========================================================
+    ============================================================")
+    obj.commit()
+    cur.close()
+    obj.close()
+  elif c==2:
+    import mysql.connector as con
+    obj=con.connect(host="localhost",user="root",password="tiger",database="SMPp
+    roject")
+    cur=obj.cursor()
+    r=int(input("Enter Reg.No.:"))
+    qry="DELETE FROM REGISTRATION_DETAILS WHERE
+    REGNO='{}'".format(r)
+    cur.execute(qry)
+    print()
+    print("Record deleted successfully!!!")
+    print("=========================================================
+    ============================================================")
+    obj.commit()
+    cur.close()
+    obj.close()
+    else:
+    print("Option invalid!!!")
 #to display records
 def displayrec():
 print("Do you want to- 1.Search by Name or 2.Search by Reg.No?")
